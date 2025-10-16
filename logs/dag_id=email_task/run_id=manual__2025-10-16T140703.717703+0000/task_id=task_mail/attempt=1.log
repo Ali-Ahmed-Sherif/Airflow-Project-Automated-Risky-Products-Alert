@@ -1,0 +1,27 @@
+[2025-10-16T14:07:08.203+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-16T14:07:08.231+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: email_task.task_mail manual__2025-10-16T14:07:03.717703+00:00 [queued]>
+[2025-10-16T14:07:08.240+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: email_task.task_mail manual__2025-10-16T14:07:03.717703+00:00 [queued]>
+[2025-10-16T14:07:08.244+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-10-16T14:07:08.261+0000] {taskinstance.py:2330} INFO - Executing <Task(EmailOperator): task_mail> on 2025-10-16 14:07:03.717703+00:00
+[2025-10-16T14:07:08.271+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=229) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-16T14:07:08.274+0000] {standard_task_runner.py:63} INFO - Started process 231 to run task
+[2025-10-16T14:07:08.274+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'email_task', 'task_mail', 'manual__2025-10-16T14:07:03.717703+00:00', '--job-id', '154', '--raw', '--subdir', 'DAGS_FOLDER/email_task.py', '--cfg-path', '/tmp/tmpdsfajm_x']
+[2025-10-16T14:07:08.280+0000] {standard_task_runner.py:91} INFO - Job 154: Subtask task_mail
+[2025-10-16T14:07:08.300+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-10-16T14:07:08.347+0000] {task_command.py:426} INFO - Running <TaskInstance: email_task.task_mail manual__2025-10-16T14:07:03.717703+00:00 [running]> on host a31b0a3647d9
+[2025-10-16T14:07:08.459+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='email_task' AIRFLOW_CTX_TASK_ID='task_mail' AIRFLOW_CTX_EXECUTION_DATE='2025-10-16T14:07:03.717703+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-16T14:07:03.717703+00:00'
+[2025-10-16T14:07:08.462+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-16T14:07:08.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:154: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2025-10-16T14:07:08.492+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-10-16T14:07:09.806+0000] {email.py:282} INFO - Sent an alert email to ['aaalihmedzekri@gmail.com']
+[2025-10-16T14:07:10.983+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-16T14:07:11.002+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=email_task, task_id=task_mail, run_id=manual__2025-10-16T14:07:03.717703+00:00, execution_date=20251016T140703, start_date=20251016T140708, end_date=20251016T140711
+[2025-10-16T14:07:11.065+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-10-16T14:07:11.090+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-16T14:07:11.094+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
